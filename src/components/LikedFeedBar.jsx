@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 const LikedFeedBar = () => {
   return (
-    <Stack direction="row" spacing={2} sx={{ height: { sx: "auto", md: "3vh" }, px: { sx: 0, md: 2}, mt: 5, display:'flex', justifyContent:'center'}}>
+    <Stack direction="row" spacing={2} sx={{p: 5, display:'flex', justifyContent:'center', textAlign:'center',height:'3vh'} }>
         <Link to='/liked'>
-            <Typography variant="h5" sx={{color: "#fff",  height:'3vh' }}>
+            <Typography variant="h5" sx={{color: "#fff" }}>
                 Liked Tracks
             </Typography>
         </Link> 
-        <Typography variant="h5" sx={{color: "#fff",height:'3vh', fontSize:"25px" }}>|</Typography>
+        <Typography variant="h5" sx={{color: "#fff", fontSize:"25px" }}>|</Typography>
         <Link to='/'>
-            <Typography variant="h5" sx={{color: "#fff",height:'3vh'  }}>
+            <Typography variant="h5" sx={{color: "#fff"  }}>
                 Feed
             </Typography>
         </Link> 
