@@ -6,3 +6,4 @@ export { default as MusicDetail } from './MusicDetail';
 export { default as MusicCard } from './MusicCard';
 export { default as LikedFeedBar } from './LikedFeedBar';
 export { default as Loader } from './Loader';
+export { default as LikedCard } from './LikedCard';

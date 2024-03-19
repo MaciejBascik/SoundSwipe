@@ -2,17 +2,18 @@ import React from 'react'
 import {Box,Stack,Typography} from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const LikedFeedBar = () => {
+const LikedFeedBar = ({likes}) => {
+
   return (
-    <Stack direction="row" spacing={2} sx={{p: 5, display:'flex', justifyContent:'center', textAlign:'center',height:'3vh'} }>
-        <Link to='/liked'>
-            <Typography variant="h5" sx={{color: "#fff" }}>
+    <Stack direction="row" gap={5}sx={{p: '5vh', display:'flex', justifyContent:'center', textAlign:'center'} }>
+        <Link to='/liked' state={likes}>
+            <Typography variant="h6" sx={{color: "#032b20" }}>
                 Liked Tracks
             </Typography>
         </Link> 
-        <Typography variant="h5" sx={{color: "#fff", fontSize:"25px" }}>|</Typography>
-        <Link to='/'>
-            <Typography variant="h5" sx={{color: "#fff"  }}>
+
+        <Link to='/' state={likes}>
+            <Typography variant="h6" sx={{color: "#032b20"  }}>
                 Feed
             </Typography>
         </Link> 

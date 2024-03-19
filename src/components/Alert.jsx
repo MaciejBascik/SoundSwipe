@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Box, CardMedia,Stack,Typography,CardContent,IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import DoneIcon from '@mui/icons-material/Done';
-const Alert = () => {
+const NoTracksAlert = () => {
   return (
           <Box>
               <Card sx={{ display: 'flex',flexDirection: 'column', width:'400px',justifyContent:'center', textAlign:'center', alignItems:'center'}}>
@@ -26,4 +26,4 @@ const Alert = () => {
   )
 }
 
-export default Alert
+export default NoTracksAlert

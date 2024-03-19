@@ -2,21 +2,30 @@ import React from 'react';
 import { MusicCard, LikedFeedBar } from './index.js';
 import { useState, useEffect } from 'react';
 import {Box,Stack,Typography} from '@mui/material';
-import { fetchFromApi } from '../utils/fetchFromApi.js';
+import { getPlaylist } from '../utils/getPlaylist.js';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+
+import { getToken } from '../utils/Token.js';
 const Feed = () => {
   const [music, setMusic] =  useState([]);
-  const [swipe, setSwipe] = useState(false)
+  const [receivedData, setReceivedData] = useState('');
+  const handleChildData = (dataFromChild) => {
+    setReceivedData(dataFromChild);
+  };
+
   useEffect(() => {
-      fetchFromApi(`playlist_tracks/?id=37i9dQZF1DX35mEXECRn6o`)
-      .then((data)=> { setMusic(data.items)})
-  }, [setMusic])
+    getToken().then(response => {
+      getPlaylist(response.access_token).then(res => {
+        setMusic(res.items)
+      })
+    });
+    }, [setMusic]);
 
   return (
-<Stack sx={{ flexDirection: 'column'}}>
-    <LikedFeedBar/>
-    <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={2} height='87vh' >
-      <MusicCard Music={music}/>
+<Stack sx={{ flexDirection: 'column', background:'#ecfdf4'}}>
+    <LikedFeedBar likes={receivedData}/>
+    <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={2} height='87vh'>
+      <MusicCard Music={music} likes={handleChildData} />
     </Stack>
 </Stack>
   );
