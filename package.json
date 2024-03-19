@@ -1,7 +1,7 @@
 {
   "name": "soundswipe",
   "version": "1.0.0",
-  "homepage": "https://MaciejBascik.github.io/react-gh-pages",
+  "homepage": "https://MaciejBascik.github.io/SoundSwipe",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.10.0",
