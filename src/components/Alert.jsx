@@ -1,8 +1,7 @@
 import React from 'react'
-import { Card, Box, CardMedia,Stack,Typography,CardContent,IconButton } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Card, Box,Typography,CardContent,IconButton } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
-const NoTracksAlert = () => {
+const NoTracksAlert = ({text}) => {
   return (
           <Box>
               <Card sx={{ display: 'flex',flexDirection: 'column', width:'400px',justifyContent:'center', textAlign:'center', alignItems:'center'}}>
@@ -12,7 +11,7 @@ const NoTracksAlert = () => {
                       <DoneIcon sx={{ height: 50, width: 50,color: "#4FCE5D" }}/>
                     </IconButton>
                     <Typography component="div" variant="h5">
-                      Przykro nam, dzisiejsze piosenki się skończyły..
+                      {text}
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary" component="div">
                       Sprawdź inne kategorie!

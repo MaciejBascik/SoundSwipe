@@ -1,6 +1,5 @@
 import React from 'react'
-import { Card, Box, CardMedia,Stack,Typography,CardContent } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Card, Box, CardMedia,Typography,CardContent } from '@mui/material';
 import { getTrack } from '../utils/getSong';
 import { getToken } from '../utils/Token';
 import Loader from './Loader';

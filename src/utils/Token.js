@@ -1,7 +1,7 @@
 import {Buffer} from 'buffer';
 
-var client_id = '73b2ecedc3e1432b8a5f46e1cb9a2d35';
-var client_secret = 'b869f0f0690748b4b4027a04891040aa';
+var client_id = process.env.REACT_APP_client_id;
+var client_secret = process.env.REACT_APP_client_secret;
 
 export async function getToken() {
   const response = await fetch('https://accounts.spotify.com/api/token', {

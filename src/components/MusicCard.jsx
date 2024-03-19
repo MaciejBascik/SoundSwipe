@@ -19,7 +19,7 @@ const MusicCard = ({ Music, likes }) => {
   }, [likedTracks, likes]);
 
   if (!Music.length) return <Loader />;
-  if (index >= Music.length) return <NoTracksAlert />;
+  if (index >= Music.length) return <NoTracksAlert text="Przykro nam, dzisiejsze piosenki się skończyły.."/>;
 
   const audio = Music[index].track.preview_url;
   console.log(Music[index].track)
@@ -101,7 +101,7 @@ const MusicCard = ({ Music, likes }) => {
 
           </Box>
           <Box sx={{marginTop:'5px'}}>
-              {!audio && (<a href="https://open.spotify.com/track/2lCNJCCu7eiBeGVu9AevkW"><Alert severity="error">Przykro nam, lecz podgląd jest niedostępny! Kliknij na ten komunikat by przejść do spotify.</Alert></a>)
+              {!audio && (<a href={`https://open.spotify.com/track/${Music[index].track.id}`}><Alert severity="error">Przykro nam, lecz podgląd jest niedostępny! Kliknij na ten komunikat by przejść do spotify.</Alert></a>)
               
               }
             </Box>
