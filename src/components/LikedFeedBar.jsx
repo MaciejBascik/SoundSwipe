@@ -7,13 +7,13 @@ const LikedFeedBar = ({likes}) => {
   return (
     <Stack direction="row" gap={5} sx={{p: '3vh', display:'flex', justifyContent:'center', textAlign:'center',} }>
         <Link to='/SoundSwipe/liked' state={likes}>
-            <Typography fontWeight="500"variant="h6"fontSize={18} sx={{color: "#000"}}>
+            <Typography  className="options-bar" variant="h6"fontSize={18} sx={{color: "#000"}}>
                 Liked Tracks
             </Typography>
         </Link> 
 
         <Link to='/SoundSwipe' state={likes}>
-            <Typography fontWeight="500" variant="h6" fontSize={18} sx={{color: "#000"}}>
+            <Typography className="options-bar" variant="h6" fontSize={18} sx={{color: "#000"}}>
                 Feed
             </Typography>
         </Link> 

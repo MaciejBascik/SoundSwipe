@@ -30,19 +30,17 @@ const Feed = () => {
     
 
 <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
-      <Box sx={{ height: { sx: "auto", md: "92vh" },  backgroundColor:'#089364', px: { sx: 0, md: 1 } }}>
+        <Box sx={{ height: { sx: "auto", md: "100vh" }, background:'#FFFFFF'}}>
         <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} setSelectedPlaylist={setSelectedPlaylist}/>
+      
       </Box>
-
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2,backgroundColor:'#ecfdf4' }}>
-        <Typography variant="h5" fontWeight="bold" mb={2} sx={{ color: "black" }}>
-          {selectedCategory} <span style={{ color: "#089364" }}>tracks</span>
-        </Typography>
+      <Box p={2} sx={{ overflowY: "auto",  flex: 2,backgroundColor:'#FEFEFE',boxShadow: '0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.02)'}}>
         <LikedFeedBar likes={receivedData}/>
-        <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={10} height='87vh'>
+        <Stack direction="row" flexWrap="wrap" justifyContent="center">
         <MusicCard Music={music} likes={handleChildData} />
         </Stack>
       </Box>
+
     </Stack>
 
 </>

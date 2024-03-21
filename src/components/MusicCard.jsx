@@ -71,7 +71,7 @@ const MusicCard = ({ Music, likes }) => {
   console.log(Music[index].track)
   return (
     <Box key={index}>
-      <Card sx={{ display: 'flex', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05)',flexDirection: 'column', pt:'20px',pb:'20px',maxWidth: { xs: '250px', md: '400px' }, minHeight: { xs: '450px', md: '500px' }, justifyContent: 'center', textAlign: 'center', alignItems: 'center', borderRadius:'20px' }}>
+      <Card sx={{ display: 'flex', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',flexDirection: 'column', pt:'20px',pb:'20px',maxWidth: { xs: '250px', md: '400px' }, minHeight: { xs: '450px', md: '500px' }, justifyContent: 'center', textAlign: 'center', alignItems: 'center', borderRadius:'20px' }}>
         <CardMedia
           component="img"
           sx={{ maxWidth: '70%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',mt:'20px' }}

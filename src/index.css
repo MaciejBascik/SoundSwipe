@@ -26,24 +26,15 @@ a {
 }
 
 .category-btn:hover {
-  background-color: #5EB99A !important;
   color: white !important;
+  background: rgb(34, 34, 214);
+  transition: opacity 0.5s ease-in-out; 
 }
 
 .category-btn:hover span{
   color: white !important;
 }
 
-.react-player {
-  height: 77vh !important;
-  width: 100% !important;
-}
-
-.search-bar{
-  border:none;
-  outline:none;
-  width:350px;
-}
 
 .category-btn{
   font-weight: bold !important;
@@ -55,11 +46,32 @@ a {
   background: transparent;
   outline: none;
   border: none;
+  padding: 5px 35px;
+  margin: 15px 0px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+.options-bar{
+  font-weight:bold;
+  font-size: 50px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  cursor:pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 5px 25px;
+  margin: 15px 0px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
 
-  padding: 7px 15px;
-  margin: 10px 0px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+.options-bar:hover {
+  color: white !important;
+  background: linear-gradient(90deg, rgb(80, 88, 199) 0%, rgb(40, 40, 211) 73%) !important;
+  transition: opacity 0.5s ease-in-out; 
 }
 
 @media screen and (max-width: 900px) {
