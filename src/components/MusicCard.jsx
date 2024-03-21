@@ -6,6 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import StopIcon from '@mui/icons-material/Stop';
 import NoTracksAlert from './Alert';
 import Loader from './Loader';
+import TinderCard from 'react-tinder-card'
 
 const MusicCard = ({ Music, likes }) => {
   const [index, setIndex] = useState(0);
@@ -68,9 +69,24 @@ const MusicCard = ({ Music, likes }) => {
       return !prevIsPlaying;
     });
   };
-  console.log(Music[index].track)
+
+
+  const onSwipe = (direction) => {
+    if(direction === "left") {
+      handleSkip();
+    }
+    else {
+      handleSwipe();
+    }
+    console.log('You swiped: ' + direction)
+  }
+  
+
+
   return (
     <Box key={index}>
+      <TinderCard onSwipe={onSwipe} flickOnSwipe="false"  preventSwipe={['down', 'up']}>
+
       <Card sx={{ display: 'flex', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',flexDirection: 'column', pt:'20px',pb:'20px',maxWidth: { xs: '250px', md: '400px' }, minHeight: { xs: '450px', md: '500px' }, justifyContent: 'center', textAlign: 'center', alignItems: 'center', borderRadius:'20px' }}>
         <CardMedia
           component="img"
@@ -105,6 +121,7 @@ const MusicCard = ({ Music, likes }) => {
 
         </Box>
       </Card>
+      </TinderCard>
     </Box>
   );
 };
