@@ -14,7 +14,7 @@ const NoTracksAlert = ({text}) => {
                       {text}
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary" component="div">
-                      Sprawdź inne kategorie!
+                      Spróbuj odswieżyć aplikacje lub sprawdź inne kategorie!
                     </Typography>
                   </CardContent>
                 </Box>

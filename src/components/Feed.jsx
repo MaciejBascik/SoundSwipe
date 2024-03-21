@@ -9,8 +9,8 @@ import { getToken } from '../utils/Token.js';
 const Feed = () => {
   const [music, setMusic] =  useState([]);
   const [receivedData, setReceivedData] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('Trap/rap');
-  const [selectedPlaylist, setSelectedPlaylist] = useState('37i9dQZF1DWXJnyndhASBe');
+  const [selectedCategory, setSelectedCategory] = useState('Polish Trap/rap');
+  const [selectedPlaylist, setSelectedPlaylist] = useState('78fl3l2j9qfX5cO9HUsvZ5');
   const handleChildData = (dataFromChild) => {
     setReceivedData(dataFromChild);
   };
@@ -23,6 +23,8 @@ const Feed = () => {
     });
     }, [selectedPlaylist]);
 
+
+    
   return (
     <>
     

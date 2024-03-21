@@ -20,11 +20,12 @@ const MusicCard = ({ Music, likes }) => {
 
   if (!Music.length) return (<Box sx={{backgroundColor:'#ecfdf4'}}><Loader /></Box>);
   if (index >= Music.length) return <NoTracksAlert text="Przykro nam, dzisiejsze piosenki się skończyły.."/>;
+
   const audio = Music[index].track.preview_url;
+  console.log(Music[index].track)
   
   const handleSwipe = () => {
     let isFound = likedTracks.includes(Music[index].track.id);
-
     if (isFound) {
       console.log("That track already exists in liked tracks list.");
     }
@@ -67,22 +68,20 @@ const MusicCard = ({ Music, likes }) => {
       return !prevIsPlaying;
     });
   };
-
+  console.log(Music[index].track)
   return (
     <Box key={index}>
-      <Card sx={{ display: 'flex', flexDirection: 'column', pt:'20px',pb:'20px',maxWidth: { xs: '250px', md: '400px' }, maxHeight: { xs: '450px', md: '550px' }, justifyContent: 'center', textAlign: 'center', alignItems: 'center' }}>
-        
-
+      <Card sx={{ display: 'flex', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05)',flexDirection: 'column', pt:'20px',pb:'20px',maxWidth: { xs: '250px', md: '400px' }, minHeight: { xs: '450px', md: '500px' }, justifyContent: 'center', textAlign: 'center', alignItems: 'center', borderRadius:'20px' }}>
         <CardMedia
           component="img"
-          sx={{ maxWidth: '70%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' }}
+          sx={{ maxWidth: '70%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',mt:'20px' }}
           image={Music[index].track.album.images[0].url}
           alt={Music[index].track.album.name}
         />
         <Box sx={{ display: 'flex', flexDirection: 'column' }} >
           <CardContent sx={{ flex: '1 0 auto' }}>
             <Typography component="div" variant="h5">
-              {Music[index].track.album.name.slice(0, 45)}
+              {Music[index].track.album.name.slice(0, 50)}
             </Typography>
             <Typography variant="subtitle1" color="text.secondary" component="div">
               {Music[index].track.album.artists[0].name.slice(0, 20)}
@@ -100,11 +99,10 @@ const MusicCard = ({ Music, likes }) => {
             </IconButton>
 
           </Box>
-          <Box sx={{marginTop:'5px'}}>
-              {!audio && (<a href={`https://open.spotify.com/track/${Music[index].track.id}`}><Alert severity="error">Przykro nam, lecz podgląd jest niedostępny! Kliknij na ten komunikat by przejść do spotify.</Alert></a>)
-              
+          
+              {!audio && (<Box sx={{marginTop:'5px', marginBottom:'-20px'}}><a href={`https://open.spotify.com/track/${Music[index].track.id}`}><Alert severity="error">Przykro nam, lecz podgląd jest niedostępny! Kliknij na ten komunikat by przejść do spotify.</Alert></a>            </Box>)
               }
-            </Box>
+
         </Box>
       </Card>
     </Box>
