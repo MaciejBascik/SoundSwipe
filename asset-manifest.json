@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/SoundSwipe/static/css/main.25daa251.css",
-    "main.js": "/SoundSwipe/static/js/main.603000f9.js",
+    "main.css": "/SoundSwipe/static/css/main.b7fd25c8.css",
+    "main.js": "/SoundSwipe/static/js/main.db69428e.js",
     "static/media/logo.svg": "/SoundSwipe/static/media/logo.0bba0e375489deb930dc1b426973a709.svg",
     "index.html": "/SoundSwipe/index.html",
-    "main.25daa251.css.map": "/SoundSwipe/static/css/main.25daa251.css.map",
-    "main.603000f9.js.map": "/SoundSwipe/static/js/main.603000f9.js.map"
+    "main.b7fd25c8.css.map": "/SoundSwipe/static/css/main.b7fd25c8.css.map",
+    "main.db69428e.js.map": "/SoundSwipe/static/js/main.db69428e.js.map"
   },
   "entrypoints": [
-    "static/css/main.25daa251.css",
-    "static/js/main.603000f9.js"
+    "static/css/main.b7fd25c8.css",
+    "static/js/main.db69428e.js"
   ]
 }
