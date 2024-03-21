@@ -1,7 +1,7 @@
 import React from 'react';
 import { MusicCard, LikedFeedBar } from './index.js';
 import { useState, useEffect } from 'react';
-import {Stack,Box,Typography} from '@mui/material';
+import {Stack,Box} from '@mui/material';
 import { getPlaylist } from '../utils/getPlaylist.js';
 import SideBar from './Sidebar.jsx';
 import { getToken } from '../utils/Token.js';

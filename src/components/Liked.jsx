@@ -1,6 +1,5 @@
 import React from 'react';
 import { LikedFeedBar,LikedCard } from './index.js';
-import { useState } from 'react';
 import {Stack} from '@mui/material';
 import NoTracksAlert from './Alert.jsx';
 import { useLocation } from 'react-router-dom';
@@ -11,7 +10,7 @@ const Liked = () => {
 
   if(!data.length) return (
     <>
-    <Stack gap={10}sx={{ flexDirection: 'column', background:'#ecfdf4', minHeight:'90vh', alignItems:'center'}} >
+    <Stack gap={10}sx={{ flexDirection: 'column', background:'#FEFEFE', minHeight:'90vh', alignItems:'center'}} >
     <LikedFeedBar/>
   <NoTracksAlert text="Brak polubionych utworów!"/> 
   </Stack>
@@ -19,7 +18,7 @@ const Liked = () => {
   );
 
   return (
-<Stack sx={{ flexDirection: 'column', background:'#ecfdf4', minHeight:'90vh'}} >
+<Stack sx={{ flexDirection: 'column', background:'#FEFEFE', minHeight:'90vh'}} >
     <LikedFeedBar/>
     <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={2} >
       {(data.length === 0) && ( <NoTracksAlert text="Brak polubionych utworów!"/> )}
