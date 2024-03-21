@@ -1,33 +1,49 @@
 import React from 'react';
 import { MusicCard, LikedFeedBar } from './index.js';
 import { useState, useEffect } from 'react';
-import {Stack} from '@mui/material';
+import {Stack,Box,Typography} from '@mui/material';
 import { getPlaylist } from '../utils/getPlaylist.js';
-
-
+import SideBar from './Sidebar.jsx';
 import { getToken } from '../utils/Token.js';
+
 const Feed = () => {
   const [music, setMusic] =  useState([]);
   const [receivedData, setReceivedData] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('Trap/rap');
+  const [selectedPlaylist, setSelectedPlaylist] = useState('37i9dQZF1DWXJnyndhASBe');
   const handleChildData = (dataFromChild) => {
     setReceivedData(dataFromChild);
   };
 
   useEffect(() => {
     getToken().then(response => {
-      getPlaylist(response.access_token).then(res => {
+      getPlaylist(response.access_token, selectedPlaylist).then(res => {
         setMusic(res.items)
       })
     });
-    }, [setMusic]);
+    }, [selectedPlaylist]);
 
   return (
-<Stack sx={{ flexDirection: 'column', background:'#ecfdf4'}}>
-    <LikedFeedBar likes={receivedData}/>
-    <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={2} height='87vh'>
-      <MusicCard Music={music} likes={handleChildData} />
+    <>
+    
+
+<Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
+      <Box sx={{ height: { sx: "auto", md: "92vh" },  backgroundColor:'#089364', px: { sx: 0, md: 1 } }}>
+        <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} setSelectedPlaylist={setSelectedPlaylist}/>
+      </Box>
+
+      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2,backgroundColor:'#ecfdf4' }}>
+        <Typography variant="h5" fontWeight="bold" mb={2} sx={{ color: "black" }}>
+          {selectedCategory} <span style={{ color: "#089364" }}>tracks</span>
+        </Typography>
+        <LikedFeedBar likes={receivedData}/>
+        <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={10} height='87vh'>
+        <MusicCard Music={music} likes={handleChildData} />
+        </Stack>
+      </Box>
     </Stack>
-</Stack>
+
+</>
   );
 };
 

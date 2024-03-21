@@ -11,7 +11,7 @@ const Liked = () => {
 
   if(!data.length) return (
     <>
-    <Stack sx={{ flexDirection: 'column', background:'#ecfdf4', minHeight:'90vh', alignItems:'center'}} >
+    <Stack gap={10}sx={{ flexDirection: 'column', background:'#ecfdf4', minHeight:'90vh', alignItems:'center'}} >
     <LikedFeedBar/>
   <NoTracksAlert text="Brak polubionych utworów!"/> 
   </Stack>

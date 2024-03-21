@@ -18,11 +18,9 @@ const MusicCard = ({ Music, likes }) => {
     likes(likedTracks);
   }, [likedTracks, likes]);
 
-  if (!Music.length) return <Loader />;
+  if (!Music.length) return (<Box sx={{backgroundColor:'#ecfdf4'}}><Loader /></Box>);
   if (index >= Music.length) return <NoTracksAlert text="Przykro nam, dzisiejsze piosenki się skończyły.."/>;
-
   const audio = Music[index].track.preview_url;
-  console.log(Music[index].track)
   
   const handleSwipe = () => {
     let isFound = likedTracks.includes(Music[index].track.id);
@@ -72,20 +70,22 @@ const MusicCard = ({ Music, likes }) => {
 
   return (
     <Box key={index}>
-      <Card sx={{ display: 'flex', flexDirection: 'column', width: { xs: '250px', md: '400px' }, height: { xs: '450px', md: '550px' }, justifyContent: 'center', textAlign: 'center', alignItems: 'center' }}>
+      <Card sx={{ display: 'flex', flexDirection: 'column', pt:'20px',pb:'20px',maxWidth: { xs: '250px', md: '400px' }, maxHeight: { xs: '450px', md: '550px' }, justifyContent: 'center', textAlign: 'center', alignItems: 'center' }}>
+        
+
         <CardMedia
           component="img"
-          sx={{ width: '80%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' }}
+          sx={{ maxWidth: '70%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' }}
           image={Music[index].track.album.images[0].url}
           alt={Music[index].track.album.name}
         />
         <Box sx={{ display: 'flex', flexDirection: 'column' }} >
           <CardContent sx={{ flex: '1 0 auto' }}>
             <Typography component="div" variant="h5">
-              {Music[index].track.album.name}
+              {Music[index].track.album.name.slice(0, 45)}
             </Typography>
             <Typography variant="subtitle1" color="text.secondary" component="div">
-              {Music[index].track.album.artists[0].name}
+              {Music[index].track.album.artists[0].name.slice(0, 20)}
             </Typography>
           </CardContent>
           <Box gap={1} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>

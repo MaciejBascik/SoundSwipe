@@ -5,11 +5,11 @@ import logo from "../utils/logo.svg";
 
 
 const Navbar = () => (
-  <Stack direction="row" alignItems="center" p={2} sx={{ height:'10vh',position:  "sticky", background: '#089364', top: 0, justifyContent: "space-between"}}>
-    <Link to="SoundSwipe/" style={{ display: "flex", alignItems: "center", justifyContent:'center', textAlign:'center' }}>
-    <img src={logo} alt="logo" height={60} />
+  <Stack direction="row" alignItems="center" p={2} sx={{ height:'6vh', background: '#089364', top: 0, justifyContent: "space-between"}}>
+    <Link to="SoundSwipe/" style={{ display: "flex", marginLeft:15,alignItems: "center", justifyContent:'center', textAlign:'center' }}>
+    <img src={logo} alt="logo" height={50} />
     </Link>
-
+    
 
 
   </Stack>
