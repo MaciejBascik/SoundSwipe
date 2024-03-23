@@ -25,7 +25,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory, setSelectedPlaylist })
         }}
         key={category.name}
       >
-        <span style={{ color: category.name === selectedCategory ? "white" : "black", marginRight: "10px" }}>
+        <span style={{ color: category.name === selectedCategory ? "white" : "blue", marginRight: "10px" }}>
           {category.icon}
         </span>
         <span style={{ opacity: category.name === selectedCategory ? "1" : "0.8" }}>

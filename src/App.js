@@ -11,8 +11,8 @@ const App = () => {
       <Routes>
         <Route exact path='/SoundSwipe/' element={<Feed />} />
         <Route path='/SoundSwipe/MusicDetail/:id' element={<MusicDetail />} />
-        <Route path='/SoundSwipe/liked/' element={<Liked />} />
-        <Route path='/SoundSwipe/profile/:id' element={<ProfileDetail />} />
+        <Route path='/SoundSwipe/Liked/' element={<Liked />} />
+        <Route path='/SoundSwipe/Artist/:id' element={<ProfileDetail />} />
       </Routes>
     </Box>
   </BrowserRouter>

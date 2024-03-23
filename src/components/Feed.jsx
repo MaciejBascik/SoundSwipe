@@ -11,6 +11,7 @@ const Feed = () => {
   const [receivedData, setReceivedData] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Polish Trap/rap');
   const [selectedPlaylist, setSelectedPlaylist] = useState('78fl3l2j9qfX5cO9HUsvZ5');
+
   const handleChildData = (dataFromChild) => {
     setReceivedData(dataFromChild);
   };
