@@ -1,7 +1,3 @@
-# APP OVERVIEW
-
-https://github.com/MaciejBascik/SoundSwipe/assets/96304157/863448bc-1671-4253-844a-e13055df8767
-
 # Getting Started with Create React App
 
 
